@@ -1,1 +1,4 @@
+*.iml
 /Objects2.iml
+/out/
+/.idea/
