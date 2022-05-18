@@ -11,36 +11,40 @@ public class Book {
         this.publishingYear = publishingYear ;
     }
 
-    @Override
-    public boolean equals(Object other) {
-        if (this == other) return true;
-        if (other == null || getClass() != other.getClass()) return false;
-        Book book = (Book) other;
-        return title.equals(book.title);
-    }
+      public String getTitle() {
 
-    @Override
-    public int hashCode() {
-        return Objects.hash(title);
-    }
-
-    public String getTitle() {
         return this.title;
     }
 
     public Author getAuthor() {
+
         return this.author;
     }
+
     public int getPublishingYear() {
+
         return this.publishingYear ;
     }
-
     public void setPublishingYear(int publishingYear) {
 
         this.publishingYear = publishingYear;
     }
 
     public String toString() {
+
         return "'" + this.title + "', " + this.author + ", " + this.publishingYear;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Book book = (Book) o;
+        return title.equals(book.title) && author.equals(book.author);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(title, author);
     }
 }
